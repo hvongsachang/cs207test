@@ -7,6 +7,10 @@ def test_linearroots_result():
 def test_linearroots_types():
     with pytest.raises(TypeError):
         roots.linear_roots("hello", "world")
+        
+def test_linearroots_zerocoeff():
+    with pytest.raises(ValueError):
+        roots.linear_roots(a=0.0)
 
 def test_quadroots_result():
     assert roots.quad_roots(1.0, 1.0, -12.0) == ((3+0j), (-4+0j))
